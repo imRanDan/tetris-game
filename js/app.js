@@ -52,11 +52,31 @@ function draw() {
   })
 }
 
-draw()
-
-
 function undraw() {
   current.forEach(index => {
     squares[currentPosition + index].classList.remove('tetromino')
   })
+}
+
+// moves tetromino down every second
+timerId = setInterval(moveDown, 1000)
+
+
+// Move down
+function moveDown() {
+  undraw()
+  currentPosition += width
+  draw()
+}
+
+// Freeze
+function freeze() {
+  if(current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
+    current.forEach(index => squares[currentPosition + index].classList.add('taken'))
+    // starts a new tetromino to fall
+    random = Math.floor(Math.random() * allTetrominoes.length)
+    current = allTetrominoes[random][currentRotation]
+    currentPosition = 4
+    draw()
+  }
 }
