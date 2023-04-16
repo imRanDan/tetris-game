@@ -65,6 +65,12 @@ timerId = setInterval(moveDown, 1000)
 function control(e) {
   if(e.keyCode === 37) {
     moveLeft()
+  } else if (e.keyCode === 38) {
+    // rotates tetromino
+  } else if (e.keyCode === 39) {
+    moveRight()
+  } else if (e.keyCode === 40) {
+    moveDown()
   }
 }
 document.addEventListener('keyup', control)
