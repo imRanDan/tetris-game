@@ -61,12 +61,21 @@ function undraw() {
 // moves tetromino down every second
 timerId = setInterval(moveDown, 1000)
 
+// assigning Keycodes for movement
+function control(e) {
+  if(e.keyCode === 37) {
+    moveLeft()
+  }
+}
+document.addEventListener('keyup', control)
+
 
 // Move down
 function moveDown() {
   undraw()
   currentPosition += width
   draw()
+  freeze()
 }
 
 // Freeze
@@ -79,4 +88,18 @@ function freeze() {
     currentPosition = 4
     draw()
   }
+}
+
+// define tetromino's edge to the left
+function moveLeft() {
+  undraw()
+  const isAtLeftEdge = current.some(index => (currentPosition + index) % width === 0)
+
+  if(!isAtLeftEdge) currentPosition -=1
+
+  if(current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
+    currentPosition +=1
+  }
+
+  draw()
 }
