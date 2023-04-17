@@ -19,6 +19,11 @@ const colours = [
 //   document.querySelectorAll("tetromino").style.borderStyle = "solid"
 // }
 
+// Reset the game through browser refresh
+function resetGame() {
+  window.location.reload();
+}
+
 
 
 // The Tetrominoes
