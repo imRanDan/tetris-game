@@ -15,6 +15,11 @@ const colours = [
   'blue'
 ]
 
+// function tetrisBorder() {
+//   document.querySelectorAll("tetromino").style.borderStyle = "solid"
+// }
+
+
 
 // The Tetrominoes
 const lTetromino = [

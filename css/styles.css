@@ -1,5 +1,15 @@
+
+.score-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em;
+}
+
 .container {
   display: flex;
+  justify-content: center;
 }
 
 .the-grid {
@@ -7,7 +17,7 @@
   height: 400px;
   display: flex;
   flex-wrap: wrap;
-  background:yellow
+  border: 1px solid black;
 }
 
 .the-grid div {
@@ -24,7 +34,7 @@
   height: 80px;
   display: flex;
   flex-wrap: wrap;
-  background-color: yellow;
+  border: 1px solid black;
 
   margin-left: 50px;
 }
