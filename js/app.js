@@ -7,6 +7,14 @@ let nextRandom = 0
 let timerId
 let score = 0
 
+const colours = [
+  'orange',
+  'red',
+  'purple',
+  'green',
+  'blue'
+]
+
 
 // The Tetrominoes
 const lTetromino = [
@@ -52,17 +60,16 @@ let current = allTetrominoes[random][0]
 function draw() {
   current.forEach(index => {
     squares[currentPosition + index].classList.add('tetromino')
+    squares[currentPosition + index].style.backgroundColor = colours[random]
   })
 }
 
 function undraw() {
   current.forEach(index => {
     squares[currentPosition + index].classList.remove('tetromino')
+    squares[currentPosition + index].style.backgroundColor = ''
   })
 }
-
-// moves tetromino down every second
-// timerId = setInterval(moveDown, 1000)
 
 // assigning Keycodes for movement
 function control(e) {
@@ -107,13 +114,10 @@ function freeze() {
 function moveLeft() {
   undraw()
   const isAtLeftEdge = current.some(index => (currentPosition + index) % width === 0)
-
   if(!isAtLeftEdge) currentPosition -=1
-
   if(current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
     currentPosition +=1
   }
-
   draw()
 }
 
@@ -121,13 +125,10 @@ function moveLeft() {
 function moveRight() {
   undraw()
   const isAtRightEdge = current.some(index => (currentPosition + index) % width === width -1)
-
   if(!isAtRightEdge) currentPosition +=1
-
   if(current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
     currentPosition -=1
   }
-
   draw()
 }
 
@@ -161,15 +162,16 @@ const upNextTetrominoes = [
 function displayShapes() {
   displaySquares.forEach(square => {
     square.classList.remove('tetromino')
+    square.style.backgroundColor = ''
   })
   upNextTetrominoes[nextRandom].forEach( index => {
     displaySquares[displayIndex + index].classList.add('tetromino')
+    displaySquares[displayIndex + index].style.backgroundColor = colours[nextRandom]
   })
 }
 
 
 // add functionalities to the start/stop buttonss
-
 startBtn.addEventListener('click', () => {
   if(timerId) {
     clearInterval(timerId)
@@ -193,6 +195,7 @@ function scoreCount() {
       row.forEach(index => {
         squares[index].classList.remove('taken')
         squares[index].classList.remove('tetromino')
+        squares[index].style.backgroundColor = ''
       })
       const squaresRemoved = squares.splice(i, width)
       squares = squaresRemoved.concat(squares)
@@ -203,7 +206,6 @@ function scoreCount() {
 
 
 // game over yeahhhhhhhhhhhhhh
-
 function gameOver() {
   if(current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
     scoreDisplay.innerHTML = 'end'
