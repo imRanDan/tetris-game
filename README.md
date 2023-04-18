@@ -1,4 +1,4 @@
-# My Awesome Project
+# TetrisJS
 Tetris, made with vanilla JavaScript!
 
 **Link to project:** https://tetris-js-game.netlify.app/
