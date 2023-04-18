@@ -15,6 +15,7 @@ body {
 
 .buttons {
   text-align: center;
+  margin: 1em
 }
 
 button {
@@ -22,6 +23,7 @@ button {
   color: var(--clr-neon);
   font-size: 1rem;
   background-color: transparent;
+  margin: 2em;
 
 
   cursor: pointer;
