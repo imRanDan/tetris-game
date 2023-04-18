@@ -10,6 +10,11 @@
 }
 
 body { 
+  background-color: var(--clr-bg);
+}
+
+.buttons {
+  text-align: center;
 }
 
 button {
@@ -53,7 +58,6 @@ button::before {
 
 button:hover,
 button:focus {
-  background: var(--clr-neon);
   color: var(--clr-bg);
   text-shadow: none;
 }
@@ -65,8 +69,20 @@ button::after {
   bottom: 0;
   left: 0;
   right: 0;
-  box-shadow: 0 0 2em 0.5em (var--clr-neon);
+  box-shadow: 0 0 2em 0.5em var(--clr-neon);
   opacity: 0;
+  background-color: var(--clr-neon);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+button:hover::before, 
+button:focus::before {
+  opacity: 1;
+}
+button:hover::after, 
+button:focus::after {
+  opacity: 1;
 }
 
 
@@ -76,6 +92,10 @@ button::after {
   align-items: center;
   flex-direction: column;
   padding: 1em;
+}
+
+.score-container h3 {
+  color: var(--clr-neon);
 }
 
 .reset {
@@ -92,7 +112,7 @@ button::after {
   height: 400px;
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid black;
+  border: 1px solid var(--clr-neon);
 }
 
 .the-grid div {
@@ -109,7 +129,7 @@ button::after {
   height: 80px;
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid black;
+  border: 1px solid var(--clr-neon);
 
   margin-left: 50px;
 }
@@ -120,9 +140,17 @@ button::after {
 }
 
 .instructions {
-  border: 1px solid black;
+  border: 1px solid var(--clr-neon);
 
   width: 70%;
   text-align: center;
   margin: 1em auto auto;
+}
+
+.instructions h2, p {
+  color: var(--clr-neon);
+  text-shadow: -1px 1px 2px #000,
+  1px 1px 2px #000,
+  1px -1px 0 #000,
+  -1px -1px 0 #000;
 }
