@@ -11,7 +11,7 @@ I used keyCodes, for loops, and more to get this game running. It was tricky for
 
 ## Optimizations
 
-I would have changed the method of creating the canvas, and i think i should add instructions too.
+I would have changed the method of creating the canvas and the way I created the shapes too. Some of the shapes don't show up based on color, which is something if i had more time to pursue, i would go fix it.
 
 ## Lessons Learned:
 
