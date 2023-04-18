@@ -1,3 +1,74 @@
+:root {
+  --clr-neon: hsl(317 100% 54%);
+  --clr-bg: hsl(323 21% 16%);
+}
+
+
+* {
+  scroll-behavior: smooth;
+  font-family: 'Silkscreen', cursive;
+}
+
+body { 
+}
+
+button {
+  display: inline-block;
+  color: var(--clr-neon);
+  font-size: 1rem;
+  background-color: transparent;
+
+
+  cursor: pointer;
+  text-decoration: none;
+  border: var(--clr-neon) 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+  text-shadow: 
+    0 0 0.125em hsl(0 0% 100% / 0.2),
+    0 0 0.25em currentColor;
+
+  box-shadow: inset 0 0 .5em 0 var(--clr-neon),
+  0 0 .5em 0 var(--clr-neon);
+
+  position: relative;
+}
+
+button::before {
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  background: var(--clr-neon);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg)
+  scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+button:hover,
+button:focus {
+  background: var(--clr-neon);
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em (var--clr-neon);
+  opacity: 0;
+}
+
 
 .score-container {
   display: flex;
@@ -46,4 +117,12 @@
 .the-mini-grid div {
   height: 20px;
   width: 20px;
+}
+
+.instructions {
+  border: 1px solid black;
+
+  width: 70%;
+  text-align: center;
+  margin: 1em auto auto;
 }
