@@ -19,6 +19,18 @@ const colours = [
 //   document.querySelectorAll("tetromino").style.borderStyle = "solid"
 // }
 
+const modal = document.querySelector('.modal');
+const openModal = document.querySelector('.open-button');
+const closeModal = document.querySelector('.close-button');
+
+openModal.addEventListener('click', () => {
+  modal.showModal()
+})
+
+closeModal.addEventListener('click', () => {
+  modal.close()
+})
+
 // Reset the game through browser refresh
 function resetGame() {
   window.location.reload();

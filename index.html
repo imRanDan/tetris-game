@@ -257,19 +257,20 @@
 <div class="buttons">
   <button id="start">Start/Pause</button>
   <button class="reset" type="submit" onClick="resetGame()">Reset Game</button>
+  <button class="button open-button">Instructions</button>
 </div>
 
 
-<section class="instructions">
-  <h2>How to play</h2>
+<section class="instruction-modal">
+  <dialog class="modal" id="modal">
+    <h2>How to play</h2>
+    <p>Use the arrow keys on your keyboard to play.</p>
+    <p>Left & Right arrow keys to move in those directions. Pressing down will move the tetrominoes down faster. The up arrow key will rotate the tetrominoes.</p>
+    <p>You can start the game by clicking start and pause by clicking the same button again. If the game glitches or ends, you can reset by clicking the reset button or refreshing the page.</p>
+    <p>Have fun!</p>
+    <button class="button close-button">Close</button>
+  </dialog>
 
-  <p>Use the arrow keys on your keyboard to play.</p>
-
-  <p>Left & Right arrow keys to move in those directions. Press down will move the tetrominoes down faster. The up arrow key will rotate the tetrominoes.</p>
-
-  <p>You can start the game by clicking start and pause by clicking the same button again. If the game glitches or ends, you can reset by clicking the reset button or refreshing the page.</p>
-
-  <p>Have fun!</p>
 </section>
 
   <script src="./js/app.js"></script>

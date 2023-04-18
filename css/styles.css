@@ -139,18 +139,16 @@ button:focus::after {
   width: 20px;
 }
 
-.instructions {
-  border: 1px solid var(--clr-neon);
+.modal {
+  padding: 1em;
+  max-width: 50ch;
 
-  width: 70%;
-  text-align: center;
-  margin: 1em auto auto;
+  color:var(--clr-neon);
+  background-color: var(--clr-bg);
 }
 
-.instructions h2, p {
-  color: var(--clr-neon);
-  text-shadow: -1px 1px 2px #000,
-  1px 1px 2px #000,
-  1px -1px 0 #000,
-  -1px -1px 0 #000;
+.modal::backdrop {
+  background-color: black;
 }
+
+
