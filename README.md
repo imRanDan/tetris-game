@@ -13,6 +13,9 @@ I used keyCodes, for loops, and more to get this game running. It was tricky for
 
 I would have changed the method of creating the canvas and the way I created the shapes too. Some of the shapes don't show up based on color, which is something if i had more time to pursue, i would go fix it.
 
+- add borders to shapes and/or grid
+- shapes seperate in two for some reason (fix that)
+
 ## Lessons Learned:
 
 Practicing my JavaScript has made me feel more secure in my competency. I wanted to create something of interest and have found that making the game was a lot of fun.
